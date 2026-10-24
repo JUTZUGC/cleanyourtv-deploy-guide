@@ -1,0 +1,90 @@
+{
+  "owner": "JUTZUGC",
+  "code": "JUTZUGC",
+  "project": {
+    "key": "cleanyourtv",
+    "nameCn": "CleanYourTV",
+    "repoName": "cleanyourtv-deploy-guide",
+    "oneLiner": "通过 Wi-Fi 给 Android TV / Google TV 去广告并换成 Apple TV 风格桌面",
+    "officialRepo": "https://github.com/Gathin23/cleanyourtv",
+    "officialDocs": "https://cleanyour.tv",
+    "stars": "30.3k",
+    "license": "MIT",
+    "highlights": [
+      "支持 Xiaomi、TCL、Hisense、Sony、OnePlus、Realme、NVIDIA Shield 等主流 Android TV / Google TV",
+      "不 root、不接线、不卸载，官方提供一键恢复",
+      "启动器体积很小，界面仿 Apple TV",
+      "电脑端需要 Python 3；换桌面需 JDK 17 + Android SDK 现场构建 APK"
+    ],
+    "mcpSupport": "项目本身不含 MCP；官方提供 PROMPT.md 供有 shell 权限的 AI 助手执行（Claude Code / Codex / Gemini CLI）。本仓库的 MCP 只提供步骤、设备要求与排错。",
+    "webuiUrl": "",
+    "adapterPorts": "",
+    "collectedAt": "2026-10-24",
+    "verification": [],
+    "deploy": {
+      "type": "script",
+      "requires": [
+        "python"
+      ],
+      "steps": [
+        "git clone https://github.com/Gathin23/cleanyourtv",
+        "cd cleanyourtv",
+        "python3 -m venv tools/venv",
+        "tools/venv/bin/pip install -r tools/requirements.txt",
+        "# 设置电视 IP 后探测：TV_HOST=192.168.x.x tools/venv/bin/python tools/tv.py --probe"
+      ],
+      "stepsPs": [
+        "git clone https://github.com/Gathin23/cleanyourtv",
+        "cd cleanyourtv",
+        "python -m venv tools\\venv",
+        "tools\\venv\\Scripts\\pip install -r tools\\requirements.txt",
+        "# 设置电视 IP 后探测：$env:TV_HOST=\"192.168.x.x\"; tools\\venv\\Scripts\\python tools\\tv.py --probe"
+      ],
+      "source": "https://github.com/Gathin23/cleanyourtv/blob/main/PROMPT.md"
+    },
+    "pitfalls": [
+      "开启 USB 调试后部分电视的 USB 口会断电，插在上面的音箱或网卡会失效，建议一次做完再关调试",
+      "5555 端口不通时，电视可能只提供无线调试：在开发者选项里配对，再执行 `adb pair` 和 `adb tcpip 5555`",
+      "macOS 报 `No route to host` 但端口是通的，是本地网络隐私权限拦截 adb，改用 Python `adb-shell`",
+      "构建桌面 APK 需要 JDK 17；JDK 24 会报 `Unsupported class file major version`",
+      "电视 SDK 低于启动器的 minSdk 时，`pm install` 返回 `INSTALL_FAILED_OLDER_SDK`",
+      "官方声明 cleanyourtv.com 等域名不是本项目运营，安装包与脚本只从本仓库获取"
+    ]
+  },
+  "gate": {
+    "allow": [
+      "dumate"
+    ],
+    "label": "百度搭子",
+    "url": "https://www.dumate.cn/",
+    "guideUrl": "https://github.com/JUTZUGC/cleanyourtv-deploy-guide",
+    "howToFix": [
+      "1. 打开 https://www.dumate.cn/ ，下载并安装「百度搭子」电脑端（Windows / macOS）",
+      "2. 用账号登录",
+      "3. 在对话窗口发送：你好，帮我从 github 部署 JUTZUGC/cleanyourtv-deploy-guide 到我的电脑上",
+      "4. 部署完成后，在同一对话窗口里继续使用"
+    ],
+    "hint": "请改用「百度搭子」部署后再使用；本工具没有网页版入口。",
+    "onError": "allow"
+  },
+  "keywords": [
+    "CleanYourTV 教程",
+    "CleanYourTV 去广告",
+    "Android TV 去广告",
+    "Google TV 去广告",
+    "电视换桌面",
+    "CleanYourTV 安装",
+    "adb 去广告",
+    "CleanYourTV 中文教程",
+    "cleanyourtv deploy guide"
+  ],
+  "topics": [
+    "cleanyourtv",
+    "android-tv",
+    "google-tv",
+    "debloat",
+    "adb",
+    "launcher",
+    "apple-tv"
+  ]
+}
