@@ -8,18 +8,19 @@
     "oneLiner": "通过 Wi-Fi 给 Android TV / Google TV 去广告并换成 Apple TV 风格桌面",
     "officialRepo": "https://github.com/Gathin23/cleanyourtv",
     "officialDocs": "https://cleanyour.tv",
-    "stars": "30.3k",
+    "stars": "36.4k",
     "license": "MIT",
     "highlights": [
       "支持 Xiaomi、TCL、Hisense、Sony、OnePlus、Realme、NVIDIA Shield 等主流 Android TV / Google TV",
       "不 root、不接线、不卸载，官方提供一键恢复",
       "启动器体积很小，界面仿 Apple TV",
-      "电脑端需要 Python 3；换桌面需 JDK 17 + Android SDK 现场构建 APK"
+      "电脑端需要 Python 3；换桌面需 JDK 17 + Android SDK 现场构建 APK",
+      "扩展：20 个 add-ons（智能家居、广告拦截、信号源、夜间音量等），可用 tools/manage.py 统一安装"
     ],
     "mcpSupport": "项目本身不含 MCP；官方提供 PROMPT.md 供有 shell 权限的 AI 助手执行（Claude Code / Codex / Gemini CLI）。本仓库的 MCP 只提供步骤、设备要求与排错。",
     "webuiUrl": "",
     "adapterPorts": "",
-    "collectedAt": "2026-10-24",
+    "collectedAt": "2026-10-26",
     "verification": [],
     "deploy": {
       "type": "script",

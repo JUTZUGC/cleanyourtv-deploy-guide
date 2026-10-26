@@ -1,7 +1,7 @@
 # CleanYourTV 一键部署指南
 
 > 第三方部署指南 · 非 CleanYourTV 官方仓库。官方项目：[Gathin23/cleanyourtv](https://github.com/Gathin23/cleanyourtv)
-> 内容来自官方文档（2026-10-24）。项目迭代快，请以[官方文档](https://cleanyour.tv)为准。
+> 内容来自官方文档（2026-10-26）。项目迭代快，请以[官方文档](https://cleanyour.tv)为准。
 
 [![⚡ 一键部署](https://img.shields.io/badge/%E2%9A%A1_%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2-%E6%8E%A8%E8%8D%90%E7%99%BE%E5%BA%A6%E6%90%AD%E5%AD%90-2ea44f?style=for-the-badge)](#一键部署推荐用百度搭子)
 
@@ -41,6 +41,7 @@ CleanYourTV 是开源的通过 Wi-Fi 给 Android TV / Google TV 去广告并换�
 - 不 root、不接线、不卸载，官方提供一键恢复
 - 启动器体积很小，界面仿 Apple TV
 - 电脑端需要 Python 3；换桌面需 JDK 17 + Android SDK 现场构建 APK
+- 扩展：20 个 add-ons（智能家居、广告拦截、信号源、夜间音量等），可用 tools/manage.py 统一安装
 
 （来源：[官方仓库](https://github.com/Gathin23/cleanyourtv)）
 
@@ -48,7 +49,7 @@ CleanYourTV 是开源的通过 Wi-Fi 给 Android TV / Google TV 去广告并换�
 
 | 优点 | 说明 |
 |---|---|
-| 30.3k stars，更新活跃 | 最新 v2.7.0（2026-10-23），社区贡献了 260+ 机型清单 |
+| 36.4k stars，更新活跃 | 最新 v3.0.0（2026-10-25），社区整理了 300 个机型 / 86 个品牌 |
 | 不 root、可恢复 | 只禁用不卸载，官方提供 restore 脚本 |
 | 全程局域网 | 不依赖云服务，电视与电脑在同一 Wi-Fi 即可 |
 | 桌面轻量 | 原生启动器体积很小，界面仿 Apple TV |
@@ -60,7 +61,7 @@ CleanYourTV 是开源的通过 Wi-Fi 给 Android TV / Google TV 去广告并换�
 | 换桌面要现场构建 | 需要 JDK 17 + Android SDK，首次耗时较长 |
 | 机型限制 | 不支持 Samsung Tizen、LG webOS、Fire TV |
 
-> 以上基于官方文档与社区反馈整理（2026-10-24），以官方最新文档为准。
+> 以上基于官方文档与社区反馈整理（2026-10-26），以官方最新文档为准。
 
 ## 快速部署（官方方式）
 
@@ -80,7 +81,7 @@ tools/venv/bin/pip install -r tools/requirements.txt
 
 项目本身不含 MCP；官方提供 PROMPT.md 供有 shell 权限的 AI 助手执行（Claude Code / Codex / Gemini CLI）。本仓库的 MCP 只提供步骤、设备要求与排错。
 
-本仓库自带一个零依赖的 MCP server（`mcp-server.mjs`），读取同目录的 `guide.json`，提供 `get_guide` / `search_guide` / `get_project_info` 三个工具，内容均来自官方文档（更新日期 2026-10-24）。
+本仓库自带一个零依赖的 MCP server（`mcp-server.mjs`），读取同目录的 `guide.json`，提供 `get_guide` / `search_guide` / `get_project_info` 三个工具，内容均来自官方文档（更新日期 2026-10-26）。
 
 **在百度搭子里接入**：客户端不扫描仓库里的配置文件，需要由百度搭子通过工作区的 MCP 注册接口注册，并且必须使用**绝对路径**（运行时的工作目录是会话目录，不是仓库目录）：
 
@@ -115,5 +116,5 @@ tools/venv/bin/pip install -r tools/requirements.txt
 ## 免责声明
 
 本仓库为第三方指南，与 CleanYourTV 官方无隶属关系，不代表官方立场。
-教程基于官方文档编写（更新日期：2026-10-24），项目迭代快，请以[官方文档](https://cleanyour.tv)为准。
+教程基于官方文档编写（更新日期：2026-10-26），项目迭代快，请以[官方文档](https://cleanyour.tv)为准。
 因使用本教程产生的部署问题，请先在官方仓库的 issue 中检索。
